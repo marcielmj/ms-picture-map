@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block header %}
+<title>PictureMap - Ver Foto</title>
+<link href="/static/css/styles.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-default ">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"><img class="logo" src="/static/img/logo.png"></a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/gallery" title="Gallery"><span class="glyphicon glyphicon glyphicon-home icone"></span></a></li>
+				<li><a href="/new" title="New Picture"><span class="icone glyphicon glyphicon-globe"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-5 col-md-offset-1">
+			<h2>Detalhes</h2>
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					<a class="thumbnail" type="button" data-toggle="modal" data-target="#modalZoom" href="#modalZoom" title="Ver Foto">
+						<img class="img-responsive" src="/photo/{{picture.photo}}">
+					</a>
+
+					<h2>{{picture.title}}</h2>
+					<strong>{{picture.date}}</strong><br>
+				</div>
+				<p>{{picture.description}}</p>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<iframe width="540" height="500" frameborder="0" style="border:0" src="	https://www.google.com/maps/embed/v1/place?key=AIzaSyDWyh4ILgwj-ztTCNo0NAtOuTPx9J6vMf8&q={{picture.lat}},{{picture.lng}}">
+			</iframe>
+			<a class="streetView" type="button" data-toggle="modal" data-target="#modalStreet" href="#modalStreet">Ver no Street View</a>
+		</div>
+
+	</div>
+</div>
+
+<div class="modal fade" id="modalZoom" tabindex="-1" role="dialog" aria-labelledby="modalZoomLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">         
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button><br></br>
+				<img class="img-responsive" src="/photo/{{picture.photo}}">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modalStreet" tabindex="-1" role="dialog" aria-labelledby="modalStreetLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+				<iframe width="540" height="500" frameborder="0" style="border:0" src="	https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDWyh4ILgwj-ztTCNo0NAtOuTPx9J6vMf8&location={{picture.lat}},{{picture.lng}}&heading=210&pitch=10&fov=35">
+				</iframe>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

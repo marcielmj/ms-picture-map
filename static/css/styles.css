@@ -1,0 +1,71 @@
+html { 
+	height: 100% 
+}
+
+body{
+	height: 100%; 
+	margin: 0; 
+	padding: 0; 
+	background-image: url();
+	font-family:'Slabo 27px', serif !important;
+    color:#020538;
+}
+
+.container{
+	margin: 0 auto;
+	padding-right:50px;
+	padding-left: 50px;
+ 
+}
+
+.navbar{
+	background-color: #1B0035!important;
+	}
+	
+.logo{
+	height: 35px;
+	}
+	
+.icone{
+	color: white;
+	font-size:25px;
+	}
+
+
+form{
+	border-color:white !important;
+	background-color: white;
+	font-size:18px;
+}
+
+.btn{
+	background-color:#020538;
+	color:white;
+}
+
+p{
+	text-align:justify;
+}
+
+.streetView, .streetView:visited{
+	text-decoration: none;
+	color:#330066;
+	border:2px solid #330066;
+	padding:5px;
+	border-radius:5px;
+}
+
+.streetView:hover{
+	text-decoration: none;
+	color:white;
+	background:#330066;
+}
+
+#map_canvas{
+	height: 100% 
+}
+
+.err{
+	color:#1B0035 !important;
+	font-weight: bold !important;
+}

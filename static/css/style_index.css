@@ -1,0 +1,35 @@
+body{
+	background-image: url(../img/foto2.jpg);
+	background-repeat: no-repeat;
+	font-family:'Slabo 27px', serif;
+    font-size: 22px;
+	color:#1B0035;
+}
+.row{
+	margin-top: 100px;
+	padding-right:120px;
+	padding-left: 120px;
+	margin-bottom:60px;
+}
+
+h1{
+	position:relative;
+	bottom:80px !important;
+	font-weight:bold;
+	font-size:45px;
+}
+
+a {
+	font-size:18px;
+	color:#330066;
+	border:2px solid #330066;
+	padding:5px;
+	border-radius:5px;
+	position:relative;
+	top:20px !important;
+}
+a:hover{
+	text-decoration: none;
+	color:white;
+	background:#330066;
+}
