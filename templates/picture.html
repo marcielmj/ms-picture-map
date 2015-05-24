@@ -53,7 +53,10 @@
 	<div class="modal-dialog">
 		<div class="modal-content">         
 			<div class="modal-body">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button><br></br>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>
+				<br><br>
 				<img class="img-responsive" src="/photo/{{picture.photo}}">
 			</div>
 		</div>
@@ -64,8 +67,11 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-body">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-				<iframe width="540" height="500" frameborder="0" style="border:0" src="	https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDWyh4ILgwj-ztTCNo0NAtOuTPx9J6vMf8&location={{picture.lat}},{{picture.lng}}&heading=210&pitch=10&fov=35">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>
+				<br><br>
+				<iframe width="565" height="500" frameborder="0" style="border:0" src="	https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDWyh4ILgwj-ztTCNo0NAtOuTPx9J6vMf8&location={{picture.lat}},{{picture.lng}}&heading=210&pitch=10&fov=35">
 				</iframe>
 			</div>
 		</div>
