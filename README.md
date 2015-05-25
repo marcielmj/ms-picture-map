@@ -1,4 +1,4 @@
-# picture-map
+# ms-picture-map
 
 Sistema colaborativo simplificado para compartilhamento de fotos históricas.
 
