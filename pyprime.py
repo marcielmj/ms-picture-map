@@ -21,7 +21,6 @@ def get(blob_key):
     return blobstore.get(blob_key)
 
 class RequestHandler(webapp2.RequestHandler):
-
     def write(self, *args, **kwargs):
         self.response.write(*args, **kwargs)
 
