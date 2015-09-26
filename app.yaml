@@ -6,16 +6,16 @@ threadsafe: yes
 
 handlers:
 - url: /static
-  static_dir: static
+  static_dir: app/static
   secure: always
 
 - url: /admin.*
-  script: picturemap.admin
+  script: app.main.admin
   login: admin
   secure: always
 
 - url: .*
-  script: picturemap.app
+  script: app.main.app
   secure: always
 
 libraries:

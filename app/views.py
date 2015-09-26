@@ -1,31 +1,36 @@
 
-import pyprime
+import handler
 import models
 import time
 
-class Index(pyprime.RequestHandler):
+class Index(handler.Request):
     def get(self):
         self.render('index.html')
 
-class UploadFail(pyprime.RequestHandler):
+
+class UploadFail(handler.Request):
     def get(self):
         self.render('upload_fail.html')
 
-class NotFound(pyprime.RequestHandler):
+
+class NotFound(handler.Request):
     def get(self):
         self.render('404.html');
 
-class AdminPage(pyprime.RequestHandler):
+
+class AdminPage(handler.Request):
     def get(self):
         pictures = models.Picture.query().order(-models.Picture.date).fetch()
         self.render('admin.html', pictures=pictures)
 
-class Gallery(pyprime.RequestHandler):
+
+class Gallery(handler.Request):
     def get(self):
         pictures = models.Picture.query().order(-models.Picture.date).fetch()
         self.render('gallery.html', pictures=pictures)
 
-class PictureDetails(pyprime.RequestHandler):
+
+class PictureDetails(handler.Request):
     def get(self, picture_id):
         picture = models.Picture.get_by_id(int(picture_id))
         if picture is None:
@@ -33,12 +38,14 @@ class PictureDetails(pyprime.RequestHandler):
 
         self.render('picture.html', picture=picture)
 
-class NewPictureForm(pyprime.RequestHandler):
+
+class NewPictureForm(handler.Request):
     def get(self):
-        upload = pyprime.create_upload_url('/upload')
+        upload = handler.create_upload_url('/upload')
         self.render('newpicture.html', url=upload)
 
-class NewPictureUpload(pyprime.UploadHandler):
+
+class NewPictureUpload(handler.Upload):
     def post(self):
         try:
             photo = self.get_uploads()[0]
@@ -55,14 +62,16 @@ class NewPictureUpload(pyprime.UploadHandler):
         except:
             self.redirect('/upload_fail')
 
-class PhotoView(pyprime.DownloadHandler):
+
+class PhotoView(handler.Download):
     def get(self, photo_key):
-        if not pyprime.get(photo_key):
+        if not handler.get(photo_key):
             self.error(404)
         else:
             self.send_blob(photo_key)
 
-class DeletePicture(pyprime.RequestHandler):
+
+class DeletePicture(handler.Request):
     def get(self, picture_id):
         picture = models.Picture.get_by_id(int(picture_id))
 
