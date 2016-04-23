@@ -59,7 +59,7 @@ class NewPictureUpload(handler.Upload):
             new_picture.put()
 
             self.redirect('/picture/%s' % str(new_picture.key.id()))
-        except:
+        except Exception:
             self.redirect('/upload_fail')
 
 
