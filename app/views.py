@@ -54,7 +54,7 @@ class NewPictureUpload(handler.Upload):
             description = self.request.get('description')
             lat = self.request.get('lat')
             lng = self.request.get('lng')
-            
+
             new_picture = models.Picture(title=title, date=date, description=description, lat=lat, lng=lng, photo=photo.key())
             new_picture.put()
 

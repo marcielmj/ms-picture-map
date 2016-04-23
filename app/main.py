@@ -13,7 +13,7 @@ app = webapp2.WSGIApplication(
         ('/picture/([0-9]+)', views.PictureDetails),
         ('/photo/([^/]+)?', views.PhotoView),
         ('/upload_fail', views.UploadFail),
-        ('/404', views.NotFound)], 
+        ('/404', views.NotFound)],
     config=config,
     debug=True)
 
