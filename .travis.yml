@@ -1,6 +1,9 @@
 sudo: false
 language: python
-
+install:
+  - echo "skip install"
+script:
+  - echo "no script to run"
 deploy:
   provider: gae
   keyfile: service-account.json
