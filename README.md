@@ -1,6 +1,6 @@
 # [picture-map](https://picture-map.appspot.com/)
 
-[![Build Status](https://travis-ci.org/marcielmj/picture-map.svg?branch=master)](https://travis-ci.org/marcielmj/picture-map)
+[![Code Health](https://landscape.io/github/marcielmj/picture-map/master/landscape.svg?style=flat)](https://landscape.io/github/marcielmj/picture-map/master) [![Build Status](https://travis-ci.org/marcielmj/picture-map.svg?branch=master)](https://travis-ci.org/marcielmj/picture-map)
 
 Sistema colaborativo simplificado para compartilhamento de fotos históricas.
 
