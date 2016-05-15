@@ -2,9 +2,9 @@ language: python
 python:
   - "2.7"
 install:
-  - pip install coveralls
+  -
 script:
-  - 
+  -
 deploy:
   provider: gae
   keyfile: service-account.json
@@ -13,5 +13,3 @@ deploy:
 before_install:
   - openssl aes-256-cbc -K $encrypted_baa643a39c37_key -iv $encrypted_baa643a39c37_iv
     -in service-account.json.enc -out service-account.json -d
-after_success:
-  - coveralls
