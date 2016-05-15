@@ -4,7 +4,7 @@ python:
 install:
   - pip install coveralls
 script:
-  - coverage run --source=app
+  coverage run --source=app
 deploy:
   provider: gae
   keyfile: service-account.json
